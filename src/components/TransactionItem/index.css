@@ -1,0 +1,23 @@
+/* Write your CSS here */
+.transactionItemStyle {
+  display: flex;
+  border: solid 1px #d7dfe9;
+  height: 45px;
+  align-items: center;
+  padding: 10px;
+}
+
+.order2 {
+  width: 150px;
+}
+
+.deleteImage {
+  height: 30px;
+}
+
+.deleteButton {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border-style: none;
+}

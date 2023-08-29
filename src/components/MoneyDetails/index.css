@@ -1,0 +1,64 @@
+/* Write your CSS here */
+.subContainerStyle {
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  width: 27vw;
+  height: 23vh;
+}
+
+.incomeContainer {
+  background-color: #cffafe;
+  border: solid 1px #06b6d4;
+}
+
+.balanceContainer {
+  background-color: #ecfccb;
+  border: solid 1px #84cc16;
+}
+
+.expensesContainer {
+  background-color: #ede9fe;
+  border: solid 1px #7c3aed;
+}
+
+.imageStyle {
+  height: 80px;
+}
+
+.containerTitleStyle {
+  color: #7e858e;
+  margin-left: 60px;
+}
+
+.valueStyle {
+  font-size: 30px;
+  margin-left: 60px;
+}
+
+.bottomContainer {
+  display: flex;
+  margin-top: 50px;
+}
+
+.transactionContainer {
+  border: solid 1px #cbd5e1;
+  padding-left: 40px;
+  padding-top: 15px;
+  border-radius: 10px;
+  width: 30vw;
+}
+
+.transactionTitleStyle {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.middleContainer {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
