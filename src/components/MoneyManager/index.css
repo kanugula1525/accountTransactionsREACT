@@ -150,6 +150,7 @@ option:hover {
   border-radius: 8px;
   color: #ffffff;
   background-color: #0b69ff;
+  cursor: pointer;
 }
 
 .transactionListCon {

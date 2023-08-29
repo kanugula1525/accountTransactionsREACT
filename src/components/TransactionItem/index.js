@@ -14,7 +14,7 @@ const TransitionItem = props => {
         <p>{title}</p>
       </div>
       <div className="order2">
-        <p>{amount}</p>
+        <p>Rs {amount}</p>
       </div>
       <div className="order2">
         <p>{transaction}</p>

@@ -20,7 +20,7 @@ const transactionTypeOptions = [
 
 class MoneyManager extends Component {
   state = {
-    transaction: 'INCOME',
+    transaction: 'Income',
     balance: 0,
     income: 0,
     expenses: 0,
@@ -43,10 +43,8 @@ class MoneyManager extends Component {
 
   transactionForm = event => {
     event.preventDefault()
-    const {title, transaction, amount, transactionList} = this.state
-    console.log(typeof 'abcd')
-    console.log(typeof 1)
-    console.log(typeof parseInt(amount))
+    const {title, transaction, amount} = this.state
+
     const newTransactionItem = {
       id: uuidv4(),
       title,
@@ -55,14 +53,16 @@ class MoneyManager extends Component {
     }
 
     if (amount !== '' && title !== '') {
+      this.setState(prevState => ({
+        transactionList: [...prevState.transactionList, newTransactionItem],
+      }))
       this.setState({
-        transactionList: [...transactionList, newTransactionItem],
         title: '',
         amount: '',
-        transaction: 'INCOME',
+        transaction: 'Income',
       })
 
-      if (transaction === 'INCOME') {
+      if (transaction === 'Income') {
         this.setState(prevState => ({
           balance: parseInt(prevState.balance) + parseInt(amount),
           income: parseInt(prevState.income) + parseInt(amount),
@@ -82,7 +82,7 @@ class MoneyManager extends Component {
       if (eachTransaction.id !== ID) {
         return eachTransaction
       }
-      if (eachTransaction.transaction === 'INCOME') {
+      if (eachTransaction.transaction === 'Income') {
         this.setState(prevState => ({
           balance:
             parseInt(prevState.balance) - parseInt(eachTransaction.amount),
@@ -169,7 +169,7 @@ class MoneyManager extends Component {
                   <option
                     key={eachItem.optionId}
                     className="optionStyle"
-                    value={eachItem.optionId}
+                    value={eachItem.displayText}
                   >
                     {eachItem.displayText}
                   </option>
