@@ -4,9 +4,11 @@ import './index.css'
 const TransitionItem = props => {
   const {onDeleteItem, eachTransaction} = props
   const {id, title, amount, transaction} = eachTransaction
-  const deletItem = () => {
+  const deleteItem = () => {
     onDeleteItem(id)
   }
+
+  const displayText = transaction === 'INCOME' ? 'Income' : 'Expenses'
 
   return (
     <li className="transactionItemStyle">
@@ -17,12 +19,12 @@ const TransitionItem = props => {
         <p>Rs {amount}</p>
       </div>
       <div className="order2">
-        <p>{transaction}</p>
+        <p>{displayText}</p>
       </div>
       <button
         data-testid="delete"
         className="deleteButton"
-        onClick={deletItem}
+        onClick={deleteItem}
         type="button"
       >
         <img

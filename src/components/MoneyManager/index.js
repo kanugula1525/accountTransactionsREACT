@@ -20,7 +20,7 @@ const transactionTypeOptions = [
 
 class MoneyManager extends Component {
   state = {
-    transaction: 'Income',
+    transaction: 'INCOME',
     balance: 0,
     income: 0,
     expenses: 0,
@@ -59,10 +59,10 @@ class MoneyManager extends Component {
       this.setState({
         title: '',
         amount: '',
-        transaction: 'Income',
+        transaction: 'INCOME',
       })
 
-      if (transaction === 'Income') {
+      if (transaction === 'INCOME') {
         this.setState(prevState => ({
           balance: parseInt(prevState.balance) + parseInt(amount),
           income: parseInt(prevState.income) + parseInt(amount),
@@ -82,7 +82,7 @@ class MoneyManager extends Component {
       if (eachTransaction.id !== ID) {
         return eachTransaction
       }
-      if (eachTransaction.transaction === 'Income') {
+      if (eachTransaction.transaction === 'INCOME') {
         this.setState(prevState => ({
           balance:
             parseInt(prevState.balance) - parseInt(eachTransaction.amount),
@@ -169,7 +169,7 @@ class MoneyManager extends Component {
                   <option
                     key={eachItem.optionId}
                     className="optionStyle"
-                    value={eachItem.displayText}
+                    value={eachItem.optionId}
                   >
                     {eachItem.displayText}
                   </option>
